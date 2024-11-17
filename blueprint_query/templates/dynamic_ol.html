@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic_page</title>
+    <link href="{{ url_for('static', filename='sem1.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<center>
+    <h2>{{ prod_title }}</h2>
+    <p>
+    <table border="1">
+        <tr class="tab_title">
+            <td>Название</td>
+            <td>Количество</td>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product['name'] }}</td>
+            <td>{{ product['quantity_dish'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </p>
+    <br>
+    <!--        <input type="button" class="btn" value="Вернуться к вводу параметров" onclick="location.href='{{ url_for('bp_query.query_index1') }}'">-->
+    <a href="{{ url_for('bp_query.queries') }}">
+        <button>Вернуться в меню запросов</button>
+    </a>
+</center>
+</body>
+</html>

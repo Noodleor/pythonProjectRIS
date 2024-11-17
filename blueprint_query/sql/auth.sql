@@ -1,0 +1,1 @@
+select * from internal_users union join external_users where login="$login" and password="$password"

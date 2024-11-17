@@ -1,0 +1,1 @@
+select name, quantity_dish from list_dish join menu on iddishm = id_dishm where idorder = $idorder

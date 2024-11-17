@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename = 'style1.css')}}"
+          rel="stylesheet" type="text/css">
+    <title>report params</title>
+</head>
+<body>
+<center>
+    <br>
+    <main>
+        <h1>Создать отчёт о продажах</h1>
+        <form action="" method=POST class="search_form">
+            <label for="in_date">Введите год</label>
+            <input type="text" name="in_date" id="in_date"><br><br>
+            <label for="out_date">Введите месяц</label>
+            <input type="text" name="out_date" id="out_date"><br><br>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% else %}
+            <br><br><br>
+            {% endif %}
+            <input type="submit" class="button" value="Отправить">
+            <input type="reset" class="button" value="Очистить">
+        </form>
+        <a href="/menu">Вернуться в главное меню</a>
+    </main>
+</center>
+</body>
+</html>

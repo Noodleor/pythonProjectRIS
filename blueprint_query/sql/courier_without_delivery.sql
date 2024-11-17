@@ -1,0 +1,1 @@
+select id_courier from courier left join orderr on id_courier = idcourier where idcourier is NULL;

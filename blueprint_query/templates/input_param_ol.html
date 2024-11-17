@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ввод параметров</title>
+    <!--    <link href="{{url_for('static', filename='sem2.css')}}"-->
+    <!--          rel="stylesheet" type="text/css">-->
+</head>
+<body>
+<center>
+    <h2>Введите параметры поиска</h2>
+    <form action="" method="post">
+        <label for="idorder">Номер заказа</label>
+        <input type="text" name="idorder" id="idorder">
+        <br><br><br>
+        <input type="submit" class="button" name="запрос" value="Найти">
+        <br><br>
+        <input type="reset" class=button value="Очистить">
+    </form>
+    <br>
+    <a href="{{ url_for('bp_query.queries') }}">
+        <button>Вернуться в меню запросов</button>
+    </a>
+</center>
+</body>
+</html>

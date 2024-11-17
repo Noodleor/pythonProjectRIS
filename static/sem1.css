@@ -1,0 +1,8 @@
+h2 {font-family : Verdana;
+    font-size   : 12pt;
+    color       : blue;
+    font-weight : bold}
+
+tr {color : green}
+
+tr.tab_title {color : blue}

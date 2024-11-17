@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main_menu</title>
+</head>
+<body>
+<center>
+    <h2> Запросы</h2>
+    <br>
+    <a href="{{ url_for('bp_query.query_index1') }}" class="btn">Меню блюд</a>
+    <br><br>
+    <a href="{{ url_for('bp_query.query_index2') }}" class="btn">Состав заказа</a>
+    <br><br>
+    <a href="{{ url_for('bp_query.query_index3') }}" class="btn">Курьеры, не выполнившие ни одной доставки</a>
+    <br><br>
+    <a href="{{ url_for('bp_query.query_index4') }}" class="btn">Курьеры, не выполнившие ни одной доставки за март
+        2017гг</a>
+    <br><br><br>
+    <a href="{{ url_for('main_menu') }}">
+        <button>Вернуться в меню</button>
+    </a>
+</center>
+</body>
+</html>

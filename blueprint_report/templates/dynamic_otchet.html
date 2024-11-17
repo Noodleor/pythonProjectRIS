@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{url_for('static', filename = 'style1.css')}}"
+          rel="stylesheet" type="text/css">
+    <title>Report</title>
+</head>
+<body>
+<center>
+    <br>
+    <main>
+        <h1>{{prod_title}}</h1>
+        <table>
+            <tr>
+                {% if 'id_dishr' in products[0].keys() %}
+                <th>ID продукта</th>
+                {% endif %}
+                {% if 'quantity' in products[0].keys() %}
+                <th>Количество</th>
+                {% endif %}
+                {% if 'cost' in products[0].keys() %}
+                <th>Стоимость</th>
+                {% endif %}
+                {% if 'year_' in products[0].keys() %}
+                <th>Год</th>
+                {% endif %}
+                {% if 'month_' in products[0].keys() %}
+                <th>Месяц</th>
+                {% endif %}
+            </tr>
+            {% for product in products %}
+            <tr>
+                {% if 'id_dishr' in products[0].keys() %}
+                <td>{{product['id_dishr']}}</td>
+                {% endif %}
+                {% if 'quantity' in products[0].keys() %}
+                <td>{{product['quantity']}}</td>
+                {% endif %}
+                {% if 'cost' in products[0].keys() %}
+                <td>{{product['cost']}}</td>
+                {% endif %}
+                {% if 'year_' in products[0].keys() %}
+                <td>{{product['year_']}}</td>
+                {% endif %}
+                {% if 'month_' in products[0].keys() %}
+                <td>{{product['month_']}}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+        <br><br>
+
+        <button><a style="text-decoration: none; color: black" href="{{url_for('bp_report.report')}}">
+            <b>
+                <center>Вернуться к работе с отчетами</center>
+            </b></a></button>
+
+        <button><a style="text-decoration: none; color: black" href="{{url_for('main_menu')}}">
+            <b>
+                <center>Вернуться в главное меню</center>
+            </b></a></button>
+        <br><br>
+    </main>
+</center>
+</body>
+</html>

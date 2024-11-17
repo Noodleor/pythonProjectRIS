@@ -1,0 +1,1 @@
+select name, price from menu where id_dishm = $product_id

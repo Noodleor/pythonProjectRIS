@@ -1,0 +1,1 @@
+select idcourier from orderr where delivery_time not between '2017-02-31' and '2017-04-01';

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Project</title>
+    <link href="{{url_for('static', filename = 'style1.css')}}"
+          rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<center>
+    <header style="height: 90px;">
+        <a href="{{url_for('bp_auth.lk_index')}}">
+        </a>
+
+    </header>
+    <br>
+</center>
+
+{% import 'basket_utils.html' as utils %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Вот товары для покупки</h2>
+            {% for item in items %}
+            {{ utils.render_item(item, show_form=True, show_amount=False) }}
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <h2>Ваша корзина</h2><br>
+            <a href="{{ url_for('bp_order.clear_basket') }}">Очистить корзину</a>
+            {% if basket %}
+            {% for key in basket %}
+            {{ utils.render_item(basket[key], show_form=False, show_amount=True) }}
+            {% endfor %}
+            {% else %}
+            <h2>Ваша корзина пуста</h2>
+            {% endif %}
+            <a href="{{ url_for('bp_order.save_order') }}">Оформить заказ</a><br>
+            <a href="{{ url_for('main_menu') }}">Вернуться в меню</a>
+        </div>
+    </div>
+</div>
+<br>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+</head>
+<body>
+<center>
+    <h2>Введите логин и пароль</h2>
+    <form action="" method="POST">
+        <label for="login">Логин</label>
+        <input type="text" name="login" id="login">
+        <br><br>
+        <label for="password">Пароль</label>
+        <input type="password" name="password" id="password">
+        <br><br>
+        {% if error %}
+        <p style="color: red;"> {{ error }}</p>
+        {% else %}
+        <br>
+        {% endif %}
+        <input type="submit" class="button" name="авторизация" value="Ввод">
+        <input type="reset" class=button value="Очистить">
+    </form>
+</center>
+</body>
+</html>

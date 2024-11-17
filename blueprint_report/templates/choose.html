@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>report menu</title>
+    <link href="{{url_for('static', filename = 'style1.css')}}"
+          rel="stylesheet" type="text/css">
+</head>
+<body>
+<center>
+    <br>
+    <main>
+        <h1> Выберите действие</h1>
+
+        <button><a style="text-decoration: none; color: black" href="{{url_for('bp_report.report_create')}}">
+            <b>
+                <center>Создать отчет</center>
+            </b></a></button>
+        <br><br>
+
+        <button><a style="text-decoration: none; color: black" href="{{url_for('bp_report.check_reports')}}">
+            <b>
+                <center>Просмотреть существующие отчеты</center>
+            </b></a></button>
+        <br><br>
+
+        <a href="{{ url_for('main_menu') }}">Вернуться в главное меню</a>
+    </main>
+</center>
+</body>
+</html>

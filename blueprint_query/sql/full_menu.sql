@@ -1,0 +1,1 @@
+select name, weight, price from menu

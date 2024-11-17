@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order has created</title>
+    <link href="{{url_for('static', filename = 'style1.css')}}"
+          rel="stylesheet" type="text/css">
+</head>
+<body>
+<center>
+    <header>
+        <a href="{{url_for('bp_auth.lk_index')}}">
+        </a>
+    </header>
+    <br>
+    <h2>Заказ создан</h2>
+    <h5>Ваш заказ успешно создан</h5>
+    <p>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Товар</td>
+            <td>Цена</td>
+            <td>Количество</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in products.values() %} <!--Jinja подставит сюда функцию -->
+        <tr>
+            <td>{{product['name']}}</td>
+            <td>{{product['price']}}</td>
+            <td>{{product['quantity']}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </p>
+    {% if total %}
+    Итого: {{total}}
+    {% endif %}<br><br>
+    <button><a style="text-decoration: none; color: black; font-size: 12pt" href="{{url_for('bp_order.order_index')}}">
+        <b>
+            <center>Продолжить покупки</center>
+        </b></a></button>
+    <button><a style="text-decoration: none; color: black; font-size: 12pt" href="{{url_for('main_menu')}}">
+        <b>
+            <center>Вернуться в главное меню</center>
+        </b></a></button>
+    <br><br>
+</center>
+</body>
+</html>
